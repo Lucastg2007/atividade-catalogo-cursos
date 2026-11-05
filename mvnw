@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+APP_HOME=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+exec java -Dmaven.multiModuleProjectDirectory="$APP_HOME" \
+  -classpath "$APP_HOME/.mvn/wrapper/maven-wrapper.jar" \
+  org.apache.maven.wrapper.MavenWrapperMain "$@"
